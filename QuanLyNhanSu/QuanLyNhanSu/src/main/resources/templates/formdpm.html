@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: header"></nav>
+	<div class="limiter">
+		<div class="container-login100" >
+			<div class="wrap-login1000 p-l-55 p-r-55 p-t-65 p-b-54"style="background-image:url(/img/bg-01.jpg)">
+    <div class="container main-content form">
+        <div class="row">
+          <form action="#" th:action="@{/department/save}" th:object="${department}"
+		    method="POST" >
+		    <input type="hidden" th:field="*{id}" />
+		    <div class="form-group">
+		        <label>Name</label> 
+		        <input type="text" class="form-control"
+		            th:field="*{name}" />   
+		    </div>	   
+		    <div class="form-group">
+		        <label>Location</label> 
+		        <input type="text" class="form-control" th:field="*{location}" />
+		    </div>
+		    <button type="submit" class="btn btn-primary">Save</button>
+		</form>
+        </div>
+    </div><!-- /.container -->
+
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>
